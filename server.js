@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-const productRoutes = require('./Routes/product');
+const productRoutes = require('./Routes/Product');
 const connectionRoutes = require('./Routes/Connection');
 const authRoutes = require('./Routes/Loginmodel');
 
