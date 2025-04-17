@@ -13,9 +13,9 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-const productRoutes = require('./routres/product');
-const connectionRoutes = require('./Routres/Connection');
-const authRoutes = require('./routres/Loginmodel');
+const productRoutes = require('./Routes/product');
+const connectionRoutes = require('./Routes/Connection');
+const authRoutes = require('./Routes/Loginmodel');
 
 app.use('/api/auth', authRoutes); // Auth route for login
 
