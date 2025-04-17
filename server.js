@@ -23,10 +23,10 @@ app.use('/api/products', productRoutes);
 app.use('/api/connection', connectionRoutes);
 
 // DB and Server Start
-mongoose.connect('mongodb+srv://user1210:Q3jrDucJ32OCoqcL@cluster0.4aniz.mongodb.net/GlowHaven', {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB connected');
-  app.listen(5000, () => console.log('Server running on port 5000'));
+  app.listen(process.env.PORT, () => console.log('Server running on port 5000'));
 }).catch(err => console.error(err));
