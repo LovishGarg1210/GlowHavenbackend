@@ -16,11 +16,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const productRoutes = require('./Routes/Product');
 const connectionRoutes = require('./Routes/Connection');
 const authRoutes = require('./Routes/Loginmodel');
-
+const UserRouter=require('./Routes/Users'); // Import User routes
 app.use('/api/auth', authRoutes); // Auth route for login
 
 app.use('/api/products', productRoutes);
 app.use('/api/connection', connectionRoutes);
+app.use('/api', UserRouter); // Use User routes
 
 // DB and Server Start
 mongoose.connect(process.env.MONGO_URL, {
